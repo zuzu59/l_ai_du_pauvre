@@ -1,7 +1,7 @@
 # l_ai_du_pauvre
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?
 
-zf240729.2338
+zf240730.0020
 
 ## Installation
 
@@ -17,6 +17,10 @@ ollama serve &
 ````
 ollama run mistral-nemo
 ````
+
+## Tests
+
+Comment conserver longtemps du pesto au basilic sans le pasteuriser ni le congeler ?
 
 
 ## Sources:

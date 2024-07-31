@@ -1,22 +1,42 @@
 # l_ai_du_pauvre
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?
 
-zf240730.0020
+zf240731.1758
+
 
 ## Installation
+Simplement faire:
 
 ````
-curl -fsSL https://ollama.com/install.sh | sh
-ollama serve &
+./install.sh
+````
+
+## Redémarrage du serveur Ollama
+Simplement faire:
+
+````
+./start_server.sh
 ````
 
 
 ## Utilisation
 
+
 ### Mistral Nemo
+Simplement faire:
+
 ````
-ollama run mistral-nemo
+./start-mistral-nemo.sh
 ````
+
+
+### llama3.1
+Simplement faire:
+
+````
+./start-llama3.1.sh
+````
+
 
 ## Tests
 

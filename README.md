@@ -22,6 +22,8 @@ ollama run mistral-nemo
 
 Comment conserver longtemps du pesto au basilic sans le pasteuriser ni le congeler ?
 
+Peux-tu me proposer une recette de gâteau au citron d'une chef patissier ?
+
 
 ## Sources:
 https://github.com/ollama/ollama<br>

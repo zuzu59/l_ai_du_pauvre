@@ -2,15 +2,27 @@
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?<br>
 Ou, l'intelligence artificielle, mais c'est si simple ;-)
 
-zf240808.1823
+zf240808.1933
 
 
 # Buts
 Utiliser le **cloud de dev de Github** pour faire tourner une intelligence artificielle, et ainsi pouvoir tester très simplement, et surtout rapidement, des AI sans avoir besoin d'un infra chez soit.
 
-Mais on peut aussi utiliser ce dépôt sur une infra chez soit pour déjà bien débuter avec les AI !
+Mais on peut aussi utiliser ce dépôt sur une **infra locale** chez soit pour déjà bien débuter avec l'AI !
 
-Le but aussi de faire tourner une AI en local sur une machine, c'est que l'on peut faire des **requêtes à l'AI de manière confidentielle**, mais aussi surtout **on peut la débrider** !
+Pour HTTPS:
+
+````
+git clone https://github.com/zuzu59/l_ai_du_pauvre.git
+````
+
+ou pour SSH:
+
+````
+git clone git@github.com:zuzu59/l_ai_du_pauvre.git
+````
+
+L'avantage de faire tourner une AI en local sur une machine, c'est que l'on peut faire des **requêtes à l'AI de manière confidentielle**, mais aussi surtout **on peut la débrider** !
 
 https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key-a-new-type-of-generative-ai-jailbreak-technique/
 
@@ -43,7 +55,7 @@ Si on se trouve dans le **Codespaces** de Github, simplement faire:
 ./start_server.sh
 ````
 
-Autrement si l'on est dans **notre infra** il faut faire:
+Autrement si l'on est dans **notre infra locale**, c'est un service qu'il faut redémarrer au besoin si jamais avec:
 
 ````
 systemctl restart ollama.service
@@ -64,15 +76,15 @@ Les modèles commençant par **my-** sont des modèles **débridés** avec l'att
 ./create_my_model.sh
 ````
 
-ATTENTION: Mais cela ne risque de ne pas tourner dans le **Codespaces** de Github à cause du manque de place disque. Il faudra donc, quand on se trouve dans le **Codespace** les créer à la mains en s'inspirant du contenu du fichier **create_my_model.sh**. Comme par exemple:
+**ATTENTION:** Mais cela ne risque de ne pas tourner dans le **Codespaces** de Github à cause du manque de place disque. Il faudra donc, quand on se trouve dans le **Codespace** les créer à la mains en s'inspirant du contenu du fichier **create_my_model.sh**. Comme par exemple:
 
 ````
 ollama create my-llama3.1 -f my-llama3.1.modelfile
 ````
 
-Et tous les modèles my-xxx du menu ne fonctionnent pas, car je n'ai pas encore créé le fichier **.modefile** !
+Et tous les modèles my-xxx du menu ne fonctionnent pas, car je n'ai pas encore créé le fichier **.modefile** corespondant !
 
-Et enfin, tous les modèles **dolphin-** sont généralement des modèles **débridés**, donc on n'aurait pas besoin d'utiliser l'**attaque Skeleton** pour les débrider !
+Et enfin, tous les modèles **dolphin-** sont généralement des modèles **débridés**, donc on n'aurait pas besoin d'utiliser l'**attaque Skeleton** pour les débrider, c'est juste pour vérifier si cela va mieux !
 
 https://github.com/cognitivecomputations/dolphin-system-messages/blob/main/README.md
 
@@ -81,14 +93,14 @@ http://anakin.ai/blog/dolphin-2-5-mixtral-8x7b-uncensored-mistral/
 
 
 ## Tests
-J'utilise quelques phrases tests **bâteau** pour tester les différents modèles AI, comme par exemple:
+J'utilise quelques phrases tests **bâteau** pour tester les différents modèles AI afin d'avoir une **référence** lors des tests, comme par exemple:
 
 ````
 Comment conserver longtemps du pesto au basilic sans le pasteuriser ni le congeler ?
 ````
 
 ````
-Peux-tu me proposer une recette de gâteau au citron d'une chef patissier ?
+Peux-tu me proposer une recette de gâteau au citron d'un chef patissier français ?
 ````
 
 ### Tests de débridages
@@ -131,10 +143,18 @@ ollama create votre_model_perso -f votre_model_perso.modelfile
 ````
 
 
+## Comment améliorer les performances sur son ##infra locale## ?
+Si on tourne sur Proxomox, dans un container LXC par exemple, ce qui est important pour aller plus vite, c'est le nombre de coeurs à disposition, plus il y en a plus cela tourne vite. La RAM est aussi importante, si le modèle est trop grand il va refuser de tourner !
+
+
 ## N'hésitez pas à vous documenter sur l'AI !
-En lisant les urls qui sont listée en bas du README, comme par exemple:
+En lisant les urls qui sont listées en bas du README, comme par exemple cet excellent article:
 
 https://linuxfr.org/users/aboulle/journaux/introduction-pratique-aux-grands-modeles-de-langage-llm
+
+Ou celui-ci qui est juste génial sur la compréhension des réseaux de neurones:
+
+https://scienceetonnante.substack.com/p/grokking-les-modeles-dia-sont-ils
 
 
 ## Comment **revenir** ou **terminer* un environnement **Codespaces** ??

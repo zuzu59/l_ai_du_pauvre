@@ -2,19 +2,23 @@
 
 # Petit script pour creerd tous les my-models
 #
-#zf240808.1545
+#zf240808.1606
 
 
 
-echo "create my-dolphin-llama3"
+echo -e "\n\ncreate my-dolphin-llama3"
 ollama create my-dolphin-llama3 -f my-dolphin-llama3.modelfile
-echo "create my-dolphin-mistral"
+
+echo -e "\n\ncreate my-dolphin-mistral"
 ollama create my-dolphin-mistral -f my-dolphin-mistral.modelfile
-echo "create my-llama31"
-ollama create my-llama31 -f my-llama31.modelfile
-echo "create my-mistral-nemo"
+
+echo -e "\n\ncreate my-llama3.1"
+ollama create my-llama3.1 -f my-llama3.1.modelfile
+
+echo -e "\n\ncreate my-mistral-nemo"
 ollama create my-mistral-nemo -f my-mistral-nemo.modelfile
-echo "create my-mistral"
+
+echo -e "\n\ncreate my-mistral"
 ollama create my-mistral -f my-mistral.modelfile
 
 

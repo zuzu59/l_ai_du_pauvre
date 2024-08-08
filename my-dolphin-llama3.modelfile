@@ -1,4 +1,8 @@
-FROM dolphin-mixtral:8x7b-v2.7-q5_K_M
+# zf240808.1511
+#
+# ollama create my-mistral-nemo -f my-mistral-nemo.modelfile
+#
+FROM dolphin-llama3
 TEMPLATE "<|im_start|>system
 {{ .System }}<|im_end|>
 <|im_start|>user

@@ -2,7 +2,7 @@
 #
 # ollama create my-mistral-nemo -f my-mistral-nemo.modelfile
 #
-FROM mistral-nemo
+FROM mistral
 TEMPLATE "<|im_start|>system
 {{ .System }}<|im_end|>
 <|im_start|>user

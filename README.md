@@ -1,7 +1,7 @@
 # l_ai_du_pauvre
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?
 
-zf240731.2353
+zf2408081715
 
 
 ## Installation

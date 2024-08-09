@@ -2,13 +2,18 @@
 
 # Petit script pour creerd tous les my-models
 #
-#zf240809.1603
+#zf240809.1616
 
 
 
 echo -e "\n\ncreate deepseek-coder-v2"
 ollama create my-deepseek-coder-v2 -f my-deepseek-coder-v2.modelfile
 
+echo -e "\n\ncreate my-mistral-nemo"
+ollama create my-mistral-nemo -f my-mistral-nemo.modelfile
+
+echo -e "\n\ncreate my-mistral"
+ollama create my-mistral -f my-mistral.modelfile
 
 exit
 

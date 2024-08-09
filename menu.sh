@@ -2,10 +2,20 @@
 
 # Petit script pour démarrer les différents modèles sur Ollama
 #
-#zf240809.1551
+#zf240809.1635
 
 # Merci à Daniel pour son script ;-)
 
+clear
+echo -e "
+
+Le modèle my-deepseek-coder-v2 est long à démarrer (je ne sais pas pourquoi) mais arès c'est une petite bombre au niveau réponses ;-)
+
+Pour les modèles my-* il faut faire tourner ./create_my_model.sh avant. Mais manque de place sur Codespaces, il n'y a que les trois premiers my-models qui tournent !
+
+CTRL-C pour sortir du menu !
+
+"
 
 
 PS3="selection: "

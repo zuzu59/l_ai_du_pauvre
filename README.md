@@ -2,7 +2,7 @@
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?<br>
 Ou, l'intelligence artificielle, mais c'est si simple ;-)
 
-zf240808.1933
+zf240809.1415
 
 
 # Buts
@@ -28,16 +28,17 @@ https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key
 
 
 # Moyens
-Pour cela, il est **obligatoire d'avoir un compte Github et de se connecter avec**. Après il suffit juste d'**appuyer sur la touche '.'** quand on se trouve dans CE projet. Ce qui va ouvrir un éditeur **VScode* directement dans son browser.
+Pour cela, il est **obligatoire d'avoir un compte Github et de se connecter avec**. Après il suffit juste d'**appuyer sur la touche '.'** quand on se trouve dans CE projet. Ce qui va ouvrir un éditeur **VScode** directement dans son browser.
 
 Et enfin, il faut démarrer un nouveau **Terminal** en allant tout en haut à gauche dans le menu **hamburger** et demander de continuer à travailler dans le **codespaces** de Github. Et finalement choisir le type de machine, prendre la plus grosse, celle à 4 cores !
 
-Un fenêtre terminal devrait s'ouvrir en bas du browser et on peut voir avec un **htop** que l'on a bien une machine 4 cores avec 16GB de RAM et 32GB de disque dont seulement 20GB de libre !
+Un fenêtre terminal devrait s'ouvrir en bas du browser et on peut voir avec un **htop** que l'on a bien une machine **4 cores avec 16GB de RAM et 32GB de disque** dont seulement 20GB de libre !
 
-On va utiliser le framework *Ollama* qui va permetre de faire tourner différents modèles d'AI
+On va utiliser le framework **Ollama** qui va permetre de faire tourner différents modèles d'AI
 
 https://ollama.com/library?sort=newest
 
+**Ollama est un outil gratuit et open source qui permet aux utilisateurs d'exécuter des modèles de langage volumineux (LLM) localement. Il simplifie l'expérience de l'IA en vous permettant d'interagir avec les LLM de manière simple sur votre machine.**
 
 
 ## Installation
@@ -84,7 +85,7 @@ ollama create my-llama3.1 -f my-llama3.1.modelfile
 
 Et tous les modèles my-xxx du menu ne fonctionnent pas, car je n'ai pas encore créé le fichier **.modefile** corespondant !
 
-Et enfin, tous les modèles **dolphin-** sont généralement des modèles **débridés**, donc on n'aurait pas besoin d'utiliser l'**attaque Skeleton** pour les débrider, c'est juste pour vérifier si cela va mieux !
+Et enfin, tous les modèles **dolphin-** sont des modèles **débridés**, donc on n'aurait pas besoin d'utiliser l'**attaque Skeleton** pour les débrider, c'est juste pour vérifier si cela va mieux !
 
 https://github.com/cognitivecomputations/dolphin-system-messages/blob/main/README.md
 
@@ -94,6 +95,16 @@ http://anakin.ai/blog/dolphin-2-5-mixtral-8x7b-uncensored-mistral/
 
 ## Tests
 J'utilise quelques phrases tests **bâteau** pour tester les différents modèles AI afin d'avoir une **référence** lors des tests, comme par exemple:
+
+````
+Quelle est ta langue de travail ?
+En quelle langue as-tu principalement été entraîné ?
+Sur quelles données as-tu été entraîné ?
+Quel est ton corpus ?
+Sur quels textes as-tu principalement été entraîné ?
+Es-tu plus performant en anglais qu'en français ?
+Quelle est ta spécialisation ?
+````
 
 ````
 Comment conserver longtemps du pesto au basilic sans le pasteuriser ni le congeler ?
@@ -132,7 +143,22 @@ Ce projet est là pour juste débuter très facilement avec une AI en mode local
 
 https://ollama.com/library?sort=newest
 
+Et n'hésitez pas à cliquer sur **View more** quand on regarde le type du modèle, cela fera apparaître tous les types de modèles (quantization q4_0, q4_1, q4_K_S and q4_K_M) qu'Ollama peut utiliser. Cela peut améliorer grandement le modèle par défaut.
+
 Car chaque modèle d'AI a sa propre spécialisation et c'est dommage de rester figer toutjours sur le même modèle pour différentes requêtes, comme des questions techniques ou du coding !
+
+Par exemple pour avoir un modèle plus spécialisé pour le coding:
+
+````
+ollama run deepseek-coder-v2
+````
+
+Pour démarrer un nouveau modèle qui n'existe pas dans le **menu**, il faut faire:
+
+````
+ollama run <le_nom_du_nouveau_modele>
+ollama run mistral-nemo:12b-instruct-2407-q5_K_M
+````
 
 
 ## N'hésitez pas à créer vos propres modèles débridés !
@@ -140,6 +166,20 @@ Inspirez-vous pour cela des fichiers **.modelfile** pour créer vos propres mod�
 
 ````
 ollama create votre_model_perso -f votre_model_perso.modelfile
+````
+
+
+## Comment voir tous les modèles qui sont installés sur la machine ?
+On peut voir tous les modèles qui sont installés sur la machine avec la commande:
+
+````
+ollama list
+````
+
+et si on n'a plus de place sur le disque, on peut en effacer avec cette commande:
+
+````
+ollama rm <le_nom_du_modele_a_effacer>
 ````
 
 

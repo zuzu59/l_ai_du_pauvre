@@ -2,8 +2,15 @@
 
 # Petit script pour creerd tous les my-models
 #
-#zf240808.1606
+#zf240809.1603
 
+
+
+echo -e "\n\ncreate deepseek-coder-v2"
+ollama create my-deepseek-coder-v2 -f my-deepseek-coder-v2.modelfile
+
+
+exit
 
 
 echo -e "\n\ncreate my-dolphin-llama3"

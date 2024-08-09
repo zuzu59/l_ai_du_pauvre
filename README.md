@@ -2,7 +2,7 @@
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?<br>
 Ou, l'intelligence artificielle, mais c'est si simple ;-)
 
-zf240809.1415
+zf240809.1925
 
 
 # Buts
@@ -104,6 +104,7 @@ Quel est ton corpus ?
 Sur quels textes as-tu principalement été entraîné ?
 Es-tu plus performant en anglais qu'en français ?
 Quelle est ta spécialisation ?
+J'aimerai savoir quand tu as été mis à jour la dernière fois ?
 ````
 
 ````

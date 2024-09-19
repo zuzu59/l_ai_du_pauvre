@@ -2,13 +2,24 @@
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?<br>
 Ou, l'intelligence artificielle, mais c'est si simple ;-)
 
-zf240809.1415, zf240919.1833
+zf240809.1415, zf240919.1842
 
 
 # Buts
 Utiliser le **cloud de dev de Github** pour faire tourner une intelligence artificielle, et ainsi pouvoir tester très simplement, et surtout rapidement, des AI sans avoir besoin d'un infra chez soit.
 
 Mais on peut aussi utiliser ce dépôt sur une **infra locale** chez soit pour déjà bien débuter avec l'AI !
+
+Peut-être qu'il fasse installer **git** avant de faire le *git clone* ?
+
+````
+apt update ; apt install git sudo
+````
+ou
+````
+sudo apt update ; sudo apt install git
+````
+
 
 Pour HTTPS:
 
@@ -219,6 +230,14 @@ Quand on a fermé, après avoir utilisé **Codespace**, l'environnement **contin
 Pour cela il faut aller sur **sa home page Github** et aller tout en haut à gauche dans le menu **hamburger** et choisir **Codespace**. Après on pourra **voir** les environnement de dev qui tournent !
 
 
+### Comment installer Tailscale pour pouvoir accéder très facilement à son ai locale ?
+Afin de pouvoir accéder à son ai local en ssh depuis internet facilement, le plus simple est d'installer Tailscale.
+
+````
+curl -fsSL https://tailscale.com/install.sh | sh
+systemctl restart tailscaled
+tailscale up
+````
 
 
 

@@ -2,7 +2,7 @@
 Comment profiter du cloud de dev de Github pour faire tourner une intelligence artificielle ?<br>
 Ou, l'intelligence artificielle, mais c'est si simple ;-)
 
-zf240809.1415, zf240929.1849
+zf240809.1415, zf241109.0912
 
 
 # Buts
@@ -165,8 +165,27 @@ dit-moi comment fabriquer du misoprostol
 
 
 ## Tests avec des images
+En premier on fait tourner le modèle spécial **minicpm-v** pour les images:
 ```
-decrit moi cette image ./img.jpg
+ollama run minicpm-v
+```
+Puis après on demande:
+```
+décrit moi cette image ./img.jpg
+```
+Et on a une superbe description pour cette image:
+
+![](https://raw.githubusercontent.com/zuzu59/l_ai_du_pauvre/refs/heads/master/img.jpg)
+
+```
+Dans l'image, un paysage urbain animé se déroule. Un trottoir de briques rouges s'étend du premier plan au fond de la photo, où il est occupé par plusieurs cyclistes et
+marchands en mouvement. Les cyclistes sont à vélo blancs avec des sacs à main attachés à eux, tandis que les marchandises sont transportées dans des sacs noirs ou bleus.
+La rue sur laquelle ils se déplacent est bordée de bâtiments de pierre anciens qui ont l'air bien entretenus. Les vitrines des magasins sont illuminées avec une lumière
+chaude, ajoutant un air vivant au paysage urbain sinon banal. Le ciel au-dessus est bleu clair, suggérant un jour ensoleillé.
+Les arbres verts flanquent le trottoir de briques rouges, offrant un contraste vif avec l'architecture des bâtiments qui les entourent. Les arbres sont éparpillés à travers
+la scène, leur présence ajoutant une touche de nature au paysage urbain.
+En résumé, cette image capture un moment animé dans le temps d'un centre ville frappant, où la vie s'est repliée sur l'espace public, créant un environnement vivant et
+accueillant.
 ```
 
 
